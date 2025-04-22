@@ -13,7 +13,7 @@ Frame.BorderSizePixel = 0
 local autoBlowButton = Instance.new("TextButton", Frame)
 autoBlowButton.Size = UDim2.new(0, 200, 0, 40)
 autoBlowButton.Position = UDim2.new(0, 10, 0, 10)
-autoBlowButton.Text = ":repeat: Toggle Auto Blow"
+autoBlowButton.Text = "Toggle Auto Blow"
 autoBlowButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 autoBlowButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 autoBlowButton.BorderSizePixel = 0
@@ -22,7 +22,7 @@ autoBlowButton.BorderSizePixel = 0
 local autoTPButton = Instance.new("TextButton", Frame)
 autoTPButton.Size = UDim2.new(0, 200, 0, 40)
 autoTPButton.Position = UDim2.new(0, 10, 0, 60)
-autoTPButton.Text = ":rocket: Auto Teleport: OFF"
+autoTPButton.Text = "Auto Teleport: OFF"
 autoTPButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 autoTPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 autoTPButton.BorderSizePixel = 0
@@ -32,7 +32,7 @@ _G.autoBlow = false
 autoBlowButton.MouseButton1Click:Connect(function()
     _G.autoBlow = not _G.autoBlow
     if _G.autoBlow then
-        autoBlowButton.Text = ":white_check_mark: Auto Blow: ON"
+        autoBlowButton.Text = "Auto Blow: ON"
         spawn(function()
             while _G.autoBlow do
                 local args = { [1] = "BlowBubble" }
@@ -41,7 +41,7 @@ autoBlowButton.MouseButton1Click:Connect(function()
             end
         end)
     else
-        autoBlowButton.Text = ":repeat: Auto Blow: OFF"
+        autoBlowButton.Text = "Auto Blow: OFF"
     end
 end)
 
@@ -50,7 +50,7 @@ _G.autoTP = false
 autoTPButton.MouseButton1Click:Connect(function()
     _G.autoTP = not _G.autoTP
     if _G.autoTP then
-        autoTPButton.Text = ":white_check_mark: Auto Teleport: ON"
+        autoTPButton.Text = "Auto Teleport: ON"
         spawn(function()
             while _G.autoTP do
                 local target = Vector3.new(-70.8165, 6859.5371, 116.4982) -- ตำแหน่งที่ต้องการวาร์ป
@@ -62,6 +62,6 @@ autoTPButton.MouseButton1Click:Connect(function()
             end
         end)
     else
-        autoTPButton.Text = ":rocket: Auto Teleport: OFF"
+        autoTPButton.Text = "Auto Teleport: OFF"
     end
 end)
